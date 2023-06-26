@@ -1,12 +1,12 @@
-runtime: python27
-api_version: 1
-threadsafe: true
+runtime: php55
 
 handlers:
-- url: /
-  static_files: www/THEBOYZ.html
-  upload: www/THEBOYZ.html
-
-- url: /(.*)
-  static_files: www/\1
-  upload: www/(.*)
+- url: /styles
+  static_dir: styles
+  
+- url: /images/(.*\.(gif|png|jpg))
+  static_files: images/\1
+  upload: images/(.*\.(gif|png|jpg))
+  
+- url: /.*
+  script: www.html
